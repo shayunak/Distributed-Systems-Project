@@ -1,4 +1,5 @@
-#! /usr/bin/python3
+#!/usr/bin/python3
+
 import os
 import pathlib
 import subprocess
@@ -172,7 +173,7 @@ def run_simulation_process():
 
         log(f'starting node{i}.')
         p = subprocess.Popen(' '.join([
-            'python',
+            'python3',
             workspace.parent.parent.absolute().joinpath('node.py').__str__(),
             f'--force-node {i}',
             '--pika-host localhost',
