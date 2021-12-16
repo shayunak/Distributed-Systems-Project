@@ -1,0 +1,20 @@
+[info] Hello from node2
+[info] I'm connected to nodes ['2', '3']
+[info] I have edges [('2', '2'), ('2', '3')]
+[info] send message to 2: hello
+[info] send message to 3: hello
+[info] message from 2: hello
+[info] message from 3: hello
+[info] started round 0 with id 4
+[info] send message to 3: echo-4-0-0
+[info] message from 3: echo-4-0-0
+[info] hit by wave with id 4 from round 0 -> same round and wave id, simple echo
+[info] got echo message from child with id 3 and sub tree size is 1
+[info] Deciding!
+[info] started round 1 with id 1
+[info] send message to 3: echo-1-1-0
+[info] message from 3: echo-1-1-4
+[info] hit by wave with id 1 from round 1 -> same round and wave id, simple echo
+[info] got echo message from child with id 3 and sub tree size is 5
+[info] Deciding!
+[info] send message to 3: announce-2

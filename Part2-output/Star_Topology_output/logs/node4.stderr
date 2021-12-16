@@ -1,0 +1,63 @@
+[info] Hello from node4
+[info] I'm connected to nodes ['1', '2', '3', '4', '5']
+[info] I have edges [('4', '1'), ('4', '2'), ('4', '3'), ('4', '4'), ('4', '5')]
+[info] send message to 1: hello
+[info] send message to 2: hello
+[info] send message to 3: hello
+[info] send message to 4: hello
+[info] send message to 5: hello
+[info] message from 2: hello
+[info] message from 1: hello
+[info] message from 5: hello
+[info] message from 3: hello
+[info] message from 2: echo-1-0-0
+[info] purged message (echo-1-0-0) -> echo before hello!
+[info] message from 1: echo-2-0-0
+[info] purged message (echo-2-0-0) -> echo before hello!
+[info] message from 4: hello
+[info] started round 0 with id 2
+[info] send message to 1: echo-2-0-0
+[info] send message to 2: echo-2-0-0
+[info] send message to 3: echo-2-0-0
+[info] send message to 5: echo-2-0-0
+[info] message from 3: echo-3-0-0
+[info] hit by wave with id 3 from round 0 -> adopted the new wave!
+[info] message from parent with id 3 -> broadcasting to neighbors
+[info] send message to 1: echo-3-0-0
+[info] send message to 2: echo-3-0-0
+[info] send message to 5: echo-3-0-0
+[info] message from 5: echo-4-0-0
+[info] hit by wave with id 4 from round 0 -> adopted the new wave!
+[info] message from parent with id 5 -> broadcasting to neighbors
+[info] send message to 1: echo-4-0-0
+[info] send message to 2: echo-4-0-0
+[info] send message to 3: echo-4-0-0
+[info] message from 1: echo-2-1-0
+[info] hit by wave with id 2 from round 1 -> adopted the new wave!
+[info] message from parent with id 1 -> broadcasting to neighbors
+[info] send message to 2: echo-2-1-0
+[info] send message to 3: echo-2-1-0
+[info] send message to 5: echo-2-1-0
+[info] message from 2: echo-2-0-1
+[info] purged message (echo-2-0-1) -> old round or smaller wave number condition!
+[info] message from 2: echo-3-0-1
+[info] purged message (echo-3-0-1) -> old round or smaller wave number condition!
+[info] message from 2: echo-4-0-1
+[info] purged message (echo-4-0-1) -> old round or smaller wave number condition!
+[info] message from 3: echo-4-0-1
+[info] purged message (echo-4-0-1) -> old round or smaller wave number condition!
+[info] message from 2: echo-2-1-1
+[info] hit by wave with id 2 from round 1 -> same round and wave id, simple echo
+[info] got echo message from child with id 2 and sub tree size is 2
+[info] message from 3: echo-2-1-1
+[info] hit by wave with id 2 from round 1 -> same round and wave id, simple echo
+[info] got echo message from child with id 3 and sub tree size is 3
+[info] message from 5: echo-2-1-1
+[info] hit by wave with id 2 from round 1 -> same round and wave id, simple echo
+[info] got echo message from child with id 5 and sub tree size is 4
+[info] sending message to parent!
+[info] send message to 1: echo-2-1-4
+[info] message from 1: announce-1
+[info] send message to 2: announce-1
+[info] send message to 3: announce-1
+[info] send message to 5: announce-1

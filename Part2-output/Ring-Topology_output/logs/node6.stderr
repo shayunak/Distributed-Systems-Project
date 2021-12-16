@@ -1,0 +1,29 @@
+[info] Hello from node6
+[info] I'm connected to nodes ['1', '5', '6']
+[info] I have edges [('6', '1'), ('6', '5'), ('6', '6')]
+[info] send message to 1: hello
+[info] send message to 5: hello
+[info] send message to 6: hello
+[info] message from 1: hello
+[info] message from 5: hello
+[info] message from 1: echo-2-0-0
+[info] purged message (echo-2-0-0) -> echo before hello!
+[info] message from 6: hello
+[info] started round 0 with id 3
+[info] send message to 1: echo-3-0-0
+[info] send message to 5: echo-3-0-0
+[info] message from 1: echo-2-1-0
+[info] hit by wave with id 2 from round 1 -> adopted the new wave!
+[info] message from parent with id 1 -> broadcasting to neighbors
+[info] send message to 5: echo-2-1-0
+[info] message from 5: echo-2-0-0
+[info] purged message (echo-2-0-0) -> old round or smaller wave number condition!
+[info] message from 5: echo-3-0-0
+[info] purged message (echo-3-0-0) -> old round or smaller wave number condition!
+[info] message from 5: echo-2-1-0
+[info] hit by wave with id 2 from round 1 -> same round and wave id, simple echo
+[info] got echo message from child with id 5 and sub tree size is 1
+[info] sending message to parent!
+[info] send message to 1: echo-2-1-1
+[info] message from 1: announce-2
+[info] send message to 5: announce-2

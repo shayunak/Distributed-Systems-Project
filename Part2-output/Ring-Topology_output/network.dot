@@ -1,0 +1,20 @@
+graph  {
+1 [host_bandwidth_down="10 Mbit", host_bandwidth_up="10 Mbit"];
+2 [host_bandwidth_down="10 Mbit", host_bandwidth_up="10 Mbit"];
+3 [host_bandwidth_down="10 Mbit", host_bandwidth_up="10 Mbit"];
+4 [host_bandwidth_down="10 Mbit", host_bandwidth_up="10 Mbit"];
+5 [host_bandwidth_down="10 Mbit", host_bandwidth_up="10 Mbit"];
+6 [host_bandwidth_down="10 Mbit", host_bandwidth_up="10 Mbit"];
+1 -- 1  [latency="10 ms", packet_loss="0.0", weight=0];
+1 -- 2  [latency="10 ms", packet_loss="0.0", weight=3];
+1 -- 6  [latency="10 ms", packet_loss="0.0", weight=5];
+2 -- 2  [latency="10 ms", packet_loss="0.0", weight=0];
+2 -- 3  [latency="10 ms", packet_loss="0.0", weight=5];
+3 -- 3  [latency="10 ms", packet_loss="0.0", weight=0];
+3 -- 4  [latency="10 ms", packet_loss="0.0", weight=6];
+4 -- 4  [latency="10 ms", packet_loss="0.0", weight=0];
+4 -- 5  [latency="10 ms", packet_loss="0.0", weight=2];
+5 -- 5  [latency="10 ms", packet_loss="0.0", weight=0];
+5 -- 6  [latency="10 ms", packet_loss="0.0", weight=7];
+6 -- 6  [latency="10 ms", packet_loss="0.0", weight=0];
+}
