@@ -12,6 +12,7 @@ from networkx.classes.reportviews import EdgeDataView
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('--network', dest='network_gml', help='The GML file for the simulated network.')
 parser.add_argument('--world', dest='world_helper', help='The World helper type.', required=True)
+parser.add_argument('--network_size', dest='network_size', help='Number of nodes of the network.', required=True)
 parser.add_argument('--log-level', dest='log_level', help='The log level', default='info')
 parser.add_argument('--force-node', dest='force_node')
 parser.add_argument('--pika-host', dest='pika_host')
@@ -93,7 +94,7 @@ class AbstractWorld(object):
 
 class SimulatorFullView(AbstractWorld):
     name = 'simulator-full-view'
-
+    
     def receive(self, src, msg):
         from algorithm import process_msg
         return process_msg(src, msg)
@@ -162,7 +163,7 @@ class SimulatorFullView(AbstractWorld):
 
 class SimulatorOnlyNeighbors(SimulatorFullView):
     name = 'simulator-only-neighbours'
-
+    
     def send_hello(self):
         for n in self.neighbors:
             self.send_message(n, HELLO_MSG)
@@ -174,6 +175,7 @@ class SimulatorOnlyNeighbors(SimulatorFullView):
 
     def __init__(self):
         super().__init__()
+        self.network_size = int(args.network_size)
 
 
 world = AbstractWorld.get_instance()

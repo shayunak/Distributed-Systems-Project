@@ -178,6 +178,7 @@ def run_simulation_process():
             f'--force-node {i}',
             '--pika-host localhost',
             '--world simulator-only-neighbours',
+            f'--network_size {num_nodes}',
             '--network ' + workspace.joinpath('network.gml').absolute().__str__(),
             '--simulate-network-parameters'
         ]), shell=True, stdout=stdout, stderr=stderr)
