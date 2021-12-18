@@ -11,4 +11,4 @@ hosts:
     quantity: {{ num_nodes }}
     processes:
       - path: node.py
-        args: --world simulator-only-neighbours --network /workspace/{{tempdir}}/network.gml --log-level {{ log_level }}
+        args: --world simulator-only-neighbours --network_size {{ num_nodes }} --network /workspace/{{tempdir}}/network.gml --log-level {{ log_level }}

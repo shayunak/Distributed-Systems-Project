@@ -133,26 +133,28 @@ def generate_graph() -> [nx.Graph, nx.DiGraph]:
 def generate_shadow_configuration(**extra):
     env = Environment(loader=FileSystemLoader('shadow_templates'))
     template = env.get_template(args.shadow_template_name)
-    with open(f"{tempdir}/shadow.yml", 'w') as f:
+    with open(f"{tempdir}/shadow.yaml", 'w') as f:
         f.write(template.render(
             stop_time=args.stop_time,
             tempdir=tempdir,
             log_level='debug' if args.debug else 'info',
             **extra
         ))
+    f.close()
 
 
 def run_simulation_shadow():
     workspace = pathlib.Path(tempdir).parent.parent.absolute()
-    command = f'docker run --rm --privileged --shm-size="1g" -v {workspace}:/workspace --log-driver=none ' \
+    command = f'sudo docker run --rm --privileged --shm-size="1g" -v {workspace}:/workspace --log-driver=none ' \
               f'-e GID={os.getgid()} ' \
               f"{args.docker_image} " \
               "--interpose-method=ptrace " \
               f"-l {'debug' if args.debug else 'info'} " \
               f"--use-shortest-path {'true' if args.shortest_path else 'false'} " \
               f"--data-directory {tempdir}/shadow.data " \
-              f"{tempdir}/shadow.yml"
+              f"{tempdir}/shadow.yaml"
 
+    print(command)
     if not args.stdout_enabled:
         with open(f"{tempdir}/log.out", 'w') as f:
             subprocess.call(command, shell=True, stdout=f, stderr=f)
